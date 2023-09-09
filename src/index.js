@@ -91,15 +91,3 @@ window.addEventListener("click",function(event) {
     modal.style.display = "none";
   }
 });
-
-// la wea tenia que haberla hecho con css pero como me colgue la hice con java, ke paso las pinches imagenes no cargan
-//cuestion master matias deberas hacer lo siguiente estas son tus misiones diarias :
-// 1- imagen de fondo fachera que resalte la pagina de preferencia nivel blue label
-//2 - no mencionar que la cague con las imagenes(sabre si hiciste de boton deaa)
-//3 - cualquiera que haya leido esto y haga el marge elimine todo rastro de informacion al respecto
-//4 - profe si usted llega a descargar esta version decirle que todo funciona menos la imagenes y no se el motivo
-//5-  volviendo a tus misiones mati :
-//6- ponle color a las letras xd
-//7- si queres ponele un boton que diga pagar y que cuando pase por encima resalte en negrito o algo asi xd
-//8- prepara un buen te porque el te tranquiliza el alma 
-// y eso es todo recompensa : aprobamos el domingo(bonus extra de 1 un chicle si no mencionas la mision 2)
