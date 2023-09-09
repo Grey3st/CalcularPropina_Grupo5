@@ -9,10 +9,10 @@
     <link href="./css/style.css" rel="stylesheet">
     <link href="./css/modal.css" rel="stylesheet">
 </head>
-<body class="text-center">
-
-        <form class="form-signin">
-            <img class="mb-4" src="./img/propina.png" alt="imagen de propina" width="90" height="72">
+<body class="text-center" style="background-size: cover" background="./img/fondo2.png">
+    
+        <form class="form-signin" style="background-color: bisque;font-family: 'Pirata One', cursive;">
+            <img class="mb-4" src="./img/propina.png" alt="imagen de propina" width="110">
             <h1 class="h2 mb-6 font-weight-normal">Calculadora de Propinas</h1>
             <label for="inputCosto" class="sr-only">Costo de la Comida</label>
             <input type="text" id="inputCosto" class="form-control" required autofocus>
@@ -51,15 +51,15 @@
         <label id="labelTarjeta" for="paymentOption" class="sr-only" style="display: none;">Selecciona una Tarjeta de Crédito</label>
         <select id="paymentOption" class="form-control" onchange="showCardInfo()" style="display: none;">
             <option value="visa">Visa</option>
-            <option value="mastercard">Mastercard</option>
             <option value="amex">American Express</option>
+            <option value="mastercard">Mastercard</option> 
+            <option value="Cabal">Cabal</option>
         </select>
 
         <!-- Contenedor para mostrar la información de la tarjeta seleccionada -->
         <div id="cardInfo" style="display: none;">
             <div id="cardName"></div>
-            <img src="./img/tarjetas.png" alt="Tarjeta" id="cardImage" width="100">
-            <img src="./img/propina.png" alt="Tarjeta" id="cardImage" width="100">
+            <img src="./img/tarjetas2.png" alt="Tarjeta" id="cardImage" width="300">
             <label for="inputTarjeta" class="sr-only"></label>
             <input type="text" id="inputTarjeta" class="form-control" placeholder="Número de Tarjeta">
         </div>
