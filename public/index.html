@@ -33,6 +33,38 @@
             <label for="resTotal" class="sr-only"><b>Total</b></label>
             <input type="number" id="resTotal" class="form-control" readonly>
             
+            
+        <!-- Sección de opciones de pago -->
+        <hr>
+        <h2>Opciones de Pago</h2>
+        <select id="creditCardOption" class="form-control" onchange="showCardInfo()">
+            <option value="efectivo">Efectivo</option>
+            <option value="tarjeta">Tarjeta de Crédito</option>
+        </select>
+
+        <!-- Campo para el número de tarjeta (inicialmente oculto) -->
+        <div id="tarjetaInput" style="display: none;">
+            <label for="inputTarjeta" class="sr-only">Número de Tarjeta</label>
+            <input type="text" id="inputTarjeta" class="form-control" placeholder="Número de Tarjeta">
+        </div>
+
+        <label for="paymentOption" class="sr-only">Selecciona una Tarjeta de Crédito</label>
+        <select id="paymentOption" class="form-control" onchange="showCardInfo()">
+            <option value="visa">Visa</option>
+            <option value="mastercard">Mastercard</option>
+            <option value="amex">American Express</option>
+        </select>
+
+        <!-- Contenedor para mostrar la información de la tarjeta seleccionada -->
+        <div id="cardInfo" style="display: none;">
+            <div id="cardName"></div>
+            <img src="./img/tarjetas.png" alt="Tarjeta" id="cardImage" width="100">
+            <img src="./img/propina.png" alt="Tarjeta" id="cardImage" width="100">
+            <label for="inputTarjeta" class="sr-only"></label>
+            <input type="text" id="inputTarjeta" class="form-control" placeholder="Número de Tarjeta">
+        </div>
+
+
         </form>
     
     <script src="../src/index.js"></script>
