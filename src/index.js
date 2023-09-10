@@ -15,51 +15,78 @@ function showCardInfo() {
     // Obtiene referencias a elementos HTML por su ID
     let creditCardOption = document.getElementById("creditCardOption");
     let cardInfo = document.getElementById("cardInfo");
-    let cardName = document.getElementById("cardName");
-    let cardImage = document.getElementById("cardImage");
-    let inputTarjeta = document.getElementById("inputTarjeta");
+    let tarjetaInput = document.getElementById("tarjetaInput");
 
     let labelTarjeta = document.getElementById("labelTarjeta");
-    let paymentOption = document.getElementById("paymentOption"); 
+    let paymentOption = document.getElementById("paymentOption");
 
-    // Obtiene el valor seleccionado en el menú desplegable
-    let selectedOption = creditCardOption.value; // Obtener la opción seleccionada en el primer menú desplegable
+    // Obtenemos ID de las tarjetas
+    let tarjetaAmerican = document.getElementById("tarjetaAmerican");
+    let tarjetaVisa = document.getElementById("tarjetaVisa");
+    let tarjetaCabal = document.getElementById("tarjetaCabal");
+    let tarjetaMastercard = document.getElementById("tarjetaMastercard");
+    
+    // Obtiene el valor seleccionado en el menú desplegable, si va a pagar en efectivo o con tarjeta
+    let selectedOption = paymentOption.value;
+
+    //Obtenemos la tarjeta con la que va a pagar
+    let tarjetaOption = creditCardOption.value;
+
     // Oculta la información de la tarjeta y el campo de número de tarjeta por defecto
     cardInfo.style.display = "none";
-    inputTarjeta.style.display = "block";
+    tarjetaInput.style.display = "none";
 
-    if (selectedOption === "tarjeta") {
+    if (selectedOption === "tarjeta") { //si paga con tarjeta
         // Muestra la información de la tarjeta
-        cardInfo.style.display = "block";
         labelTarjeta.style.display = "block";
-        paymentOption.style.display = "block";
+        creditCardOption.style.display = "block";
+
+        cardInfo.style.display = "block";
+        tarjetaInput.style.display = "block";
+        
 
         // Configura la información de la tarjeta seleccionada
-        switch (selectedOption) {
+        switch (tarjetaOption) {
             case "visa":
-                cardName.textContent = "Visa";
-                cardImage.src = "./img/tarjetas.png"; // Reemplaza con la ruta de la imagen de Visa
+                habilitarTodasTarjetas();
+                tarjetaAmerican.style.opacity = "0.5";
+                tarjetaCabal.style.opacity = "0.5";
+                tarjetaMastercard.style.opacity = "0.5";
                 break;
             case "mastercard":
-                cardName.textContent = "Mastercard";
-                cardImage.src = "./img/tarjetas.png" // Reemplaza con la ruta de la imagen de Mastercard
-
+                habilitarTodasTarjetas();
+                tarjetaAmerican.style.opacity = "0.5";
+                tarjetaCabal.style.opacity = "0.5";
+                tarjetaVisa.style.opacity = "0.5";
                 break;
             case "amex":
-                cardName.textContent = "American Express";
-                cardImage.src = "./img/tarjetas.png"; // Reemplaza con la ruta de la imagen de American Express
+                habilitarTodasTarjetas();
+                tarjetaMastercard.style.opacity = "0.5";
+                tarjetaCabal.style.opacity = "0.5";
+                tarjetaVisa.style.opacity = "0.5";
                 break;
+            case "cabal":
+                habilitarTodasTarjetas();
+                tarjetaMastercard.style.opacity = "0.5";
+                tarjetaAmerican.style.opacity = "0.5";
+                tarjetaVisa.style.opacity = "0.5";
+                break; 
         }
-
-        // Muestra el campo para el número de tarjeta
-        inputTarjeta.style.display = "none";
     }else{
         if (selectedOption == "efectivo"){
             labelTarjeta.style.display = "none";
-            paymentOption.style.display = "none";
+            creditCardOption.style.display = "none";
         }
     }
 }
+
+function habilitarTodasTarjetas(){
+    tarjetaAmerican.style.opacity = "1";
+    tarjetaCabal.style.opacity = "1";
+    tarjetaMastercard.style.opacity = "1";
+    tarjetaVisa.style.opacity = "1";
+}
+
 window.onload = function () {
     showCardInfo(); // Llama a la función para configurar el estado inicial
 };
