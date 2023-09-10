@@ -59,13 +59,25 @@
         </div>
 
         <!-- Campo para el número de tarjeta (inicialmente oculto) -->
-        <br><div id="tarjetaInput">
+        <br>
+        <div id="tarjetaInput">
             <label for="inputTarjeta" class="sr-only">Número de Tarjeta</label>
-            <input type="number" class="form-control" placeholder="Número de Tarjeta">
+            <input type="number" class="form-control" placeholder="Número de Tarjeta"><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        Fecha de Vencimiento
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-sm">
+                        Codigo de Seguridad
+                        <input type="number" class="form-control">
+                    </div>
+                </div>
+            </div>
         </div>
 
         <br>
-
         <button id="abrirModal" type="button" class="btn btn-success" data-toggle="modal">
             Pagar
         </button>
